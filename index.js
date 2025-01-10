@@ -5,7 +5,6 @@ const { OpenAI } = require("openai");
 require("dotenv").config();
 
 const app = express();
-const port = 3000;
 
 // Middleware
 app.use(bodyParser.json());
@@ -35,6 +34,7 @@ app.get("/today-in-history", async (req, res) => {
 });
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on ${PORT}`);
 });
