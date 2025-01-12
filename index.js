@@ -17,6 +17,7 @@ const openai = new OpenAI({
 app.get("/today-in-history", async (req, res) => {
   try {
     const today = new Date().toLocaleDateString("en-US", {
+      timeZone: "UTC",
       month: "long",
       day: "numeric",
     });
