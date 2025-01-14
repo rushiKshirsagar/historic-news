@@ -22,7 +22,7 @@ app.get("/today-in-history", async (req, res) => {
       day: "numeric",
     });
 
-    const prompt = `What is an interesting and great thing that happened on ${today} in history? Provide the response in 40 words.`;
+    const prompt = `What is an interesting and great thing that happened in the world on ${today} in history? Provide the response in 40 words.`;
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [{ role: "user", content: prompt }],
